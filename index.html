@@ -3,36 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>calculadora</title>
+    <title>Calculadora Bonita</title>
 
     <style>
       body {
         font-family: Arial, sans-serif;
-        text-align: center;
-        margin-top: 50px;
+        background: linear-gradient(to right, #2b2c31, #2a282c);
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
       }
       .calculator {
-        display: inline-block;
+        text-align: center;
         padding: 20px;
-        border: 2px solid #ccc;
-        border-radius: 10px;
-        background-color: #f9f9f9;
+        border-radius: 15px;
+        background: #f9f9f9;
+        color: #333;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        width: 300px;
       }
-      input[type="number"] {
-        width: 100px;
-        margin: 5px;
-        padding: 5px;
+      #resultado {
+        font-size: 36px;
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 2px solid #ddd;
+        border-radius: 10px;
+        background: #fff;
+        color: #333;
       }
       button {
+        background-color: #007bff;
+        border: none;
+        color: #fff;
+        font-size: 18px;
         padding: 10px 20px;
         margin: 5px;
-        font-size: 16px;
+        border-radius: 10px;
         cursor: pointer;
+        transition: all 0.3s ease;
       }
-      #result {
-        margin-top: 10px;
-        font-weight: bold;
-        color: #333;
+      button:hover {
+        background-color: #0056b3;
+      }
+      button.operation {
+        background-color: #28a745;
+      }
+      button.operation:hover {
+        background-color: #1e7e34;
+      }
+      button.clear {
+        background-color: #dc3545;
+      }
+      button.clear:hover {
+        background-color: #c82333;
       }
     </style>
 
@@ -92,34 +118,36 @@
   </head>
 
   <body>
-    <p id="resultado">0</p>
+    <div class="calculator">
+      <p id="resultado">0</p>
 
-    <div>
-      <button onclick="location.reload()">C</button>
-      <button onclick="divisao()">/</button>
-      <button onclick="multiplicacao()">x</button>
-      <button onclick="resultar()">=</button>
-    </div>
+      <div>
+        <button class="clear" onclick="location.reload()">C</button>
+        <button class="operation" onclick="divisao()">/</button>
+        <button class="operation" onclick="multiplicacao()">x</button>
+        <button class="operation" onclick="resultar()">=</button>
+      </div>
 
-    <div>
-      <button onclick="btn_(7)">7</button>
-      <button onclick="btn_(8)">8</button>
-      <button onclick="btn_(9)">9</button>
-      <button onclick="subtraçao()">-</button>
-    </div>
+      <div>
+        <button onclick="btn_(7)">7</button>
+        <button onclick="btn_(8)">8</button>
+        <button onclick="btn_(9)">9</button>
+        <button class="operation" onclick="subtraçao()">-</button>
+      </div>
 
-    <div>
-      <button onclick="btn_(4)">4</button>
-      <button onclick="btn_(5)">5</button>
-      <button onclick="btn_(6)">6</button>
-      <button onclick="somar()">+</button>
-    </div>
+      <div>
+        <button onclick="btn_(4)">4</button>
+        <button onclick="btn_(5)">5</button>
+        <button onclick="btn_(6)">6</button>
+        <button class="operation" onclick="somar()">+</button>
+      </div>
 
-    <div>
-      <button onclick="btn_(1)">1</button>
-      <button onclick="btn_(2)">2</button>
-      <button onclick="btn_(3)">3</button>
-      <button onclick="btn_(0)">0</button>
+      <div>
+        <button onclick="btn_(1)">1</button>
+        <button onclick="btn_(2)">2</button>
+        <button onclick="btn_(3)">3</button>
+        <button onclick="btn_(0)">0</button>
+      </div>
     </div>
   </body>
 </html>
